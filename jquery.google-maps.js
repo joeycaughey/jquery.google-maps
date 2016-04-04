@@ -23,6 +23,7 @@ var Map = {
         var self = this;
 
         var iconBase = '_assets/images/';
+<<<<<<< Updated upstream
 		var icons = {
 			  parking: {
 			    icon: iconBase + 'icon.marker.png'
@@ -34,16 +35,36 @@ var Map = {
 			    icon: iconBase + 'info-i_maps.png'
 			  }
 		};
+=======
+        var icons = {
+              parking: {
+                icon: iconBase + 'icon.marker.png'
+              },
+              library: {
+                icon: iconBase + 'library_maps.png'
+              },
+              info: {
+                icon: iconBase + 'info-i_maps.png'
+              }
+        };
+>>>>>>> Stashed changes
 
         self.check_postal_code(address, function(details) {
             self.map.setCenter(new google.maps.LatLng(details.lat, details.lng));
             //console.log("Address Details", details);
 
             self.add_marker({
+<<<<<<< Updated upstream
             	lat: details.lat,
             	lng: details.lng,
             	title: "Test Marker",
             	icon: icons['parking'].icon
+=======
+                lat: details.lat,
+                lng: details.lng,
+                title: "Test Marker",
+                icon: icons['parking'].icon
+>>>>>>> Stashed changes
             })
         });
     },
@@ -60,6 +81,7 @@ var Map = {
 
 
             labelContent: "$12",
+<<<<<<< Updated upstream
 	        labelAnchor: new google.maps.Point(16, 00),
 	        labelClass: "label", // the CSS class for the label
 	      
@@ -73,6 +95,21 @@ var Map = {
 		    	url: 'map.details.html'
 		    })
 		});
+=======
+            labelAnchor: new google.maps.Point(16, 00),
+            labelClass: "label", // the CSS class for the label
+          
+            labelInBackground: false
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+            Popup.init({
+                width: 550,
+                height: 250,
+                url: 'map.details.html'
+            })
+        });
+>>>>>>> Stashed changes
 
 
         self.markers.push(marker);
